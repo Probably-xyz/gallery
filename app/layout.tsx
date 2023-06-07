@@ -2,6 +2,9 @@ import './styles/globals.css'
 import { Inter } from 'next/font/google'
 import { NextAuthProvider } from './providers'
 import React from 'react'
+import { MainNav } from './components/nav.component'
+
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,7 +21,11 @@ export default function RootLayout({
   children: React.ReactNode,
   modal: React.ReactNode,
   props: React.ReactNode,
+ 
 }) {
+ 
+
+  
   return (
     <html lang="en">
       <body className={inter.className}>

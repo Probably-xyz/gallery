@@ -5,15 +5,6 @@ import { signIn, signOut } from "next-auth/react"
 
 
 
-// export const SignIn = () => {
-//     <>
-//     <button onClick={() => signIn()}> 
-//         <h1> TEST SIGN IN </h1>
-//     </button>
-//     </>
-    
-// }
-
 
 export const SignInBtn = () => {
   return (

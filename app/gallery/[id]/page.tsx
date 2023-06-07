@@ -1,10 +1,7 @@
 import React from 'react'
 import { FC } from "react"
-// import getPostById from '@/app/lib/getPost'
-import PostSlug from '@/app/components/slug.component'
 import { notFound } from 'next/navigation'
-import prisma from '@/app/lib/prisma'
-import { NextPage } from 'next'
+
 
 
 interface PageProps{
@@ -17,38 +14,13 @@ interface PageProps{
     
   }
 
-// type post = {
-
-//   name: string,
-//   description: string,
-//   id?: string,
-//   pitch: string
-
-// }
-
-
-    
-    // async function getData({params}: PageProps) {
-    //     const res = await fetch(`http://localhost:3000/api/post/` + params.id)
-
-    //     if (!res.ok){
-    //         return notFound()
-    //     }
-
-    //     return res.json()
-    // }
-
-    
-
-    
-
 
    export default async function Slug({params}: PageProps) {
 
 
     const id = params.id
 
-    let link = `https://gallery-probably.vercel.app/api/post/` + id
+    let link = `http://localhost:3000/api/post/` + id
 
     console.log(link)
 

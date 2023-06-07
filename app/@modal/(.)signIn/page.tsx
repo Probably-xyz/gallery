@@ -1,14 +1,17 @@
-import React from 'react'
+"use client"
 
-const SigninModal = () => {
+import React from 'react'
+import { useSignInModal } from "../../components/layout/signInModal";
+
+
+const Signin = () => {
+  const { SignInModal, setShowSignInModal } = useSignInModal();
+
   return (
     <>
-    <div className="w-44 h-44 bg-red-600 z-10">
-        <h1> Nayef Kanaan </h1>
-    </div>
-        
+      <SignInModal />      
     </>
   )
 }
 
-export default SigninModal
+export default Signin
