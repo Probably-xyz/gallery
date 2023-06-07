@@ -1,8 +1,9 @@
-import './styles/globals.css'
+import '../styles/globals.css'
 import { Inter } from 'next/font/google'
 import { NextAuthProvider } from './providers'
 import React from 'react'
-import { MainNav } from './components/nav.component'
+import { MainNav } from '@/components/nav.component'
+import { Toaster } from "@/components/shared/toaster"
 
 
 
@@ -30,6 +31,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <NextAuthProvider>
+          <Toaster/>
           {modal}
           {children}
         </NextAuthProvider>

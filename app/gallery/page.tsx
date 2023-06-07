@@ -1,8 +1,8 @@
-import { GalleryNav } from '../components/nav.component';
+import { GalleryNav } from '@/components/nav.component';
 import React from 'react'
-import {SignOutBtn} from '../components/button.component';
-import Card from '../components/card.component';
-import { getPosts } from '../lib/getPosts';
+import {SignOutBtn} from '@/components/button.component';
+import Card from '@/components/card.component';
+import { getPosts } from '@/lib/getPosts';
 
 
 

@@ -61,6 +61,72 @@
     transform: translate3d(0, -2px, 0);
 }
 
+
+.gallery-btn-3{
+    position: relative;
+    right: 120px;
+    top: 100px;
+    width: 250px;
+}
+
+.shine-anim{
+    padding: 3px 12px;
+    border-radius: 35px;
+    border: 1px solid #333;
+    transition: 0.5s ease;
+    overflow: hidden;
+    position: relative;
+    transition: 0.5s ease;
+}
+
+.shine-anim-2{
+    width: 350px;
+    height: 65px;
+    border-radius: 35px;
+    border: 1px solid #333;
+    transition: 0.5s ease;
+    overflow: hidden;
+    position: relative;
+    transition: 0.5s ease;
+}
+
+.shine-anim::before{
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, #5D31FF, transparent);
+    opacity: 0.2;
+    z-index: -10;
+    animation: shine 1.5s infinite;
+    overflow: hidden;
+}
+
+.shine-anim:hover::before{
+    background: linear-gradient(90deg, transparent, #333, transparent);
+    animation: shine 1s infinite;
+}
+
+@keyframes shine{
+    0% {
+
+        left: -100%
+    }
+    100% {
+
+        left: 100%
+    }
+}
+
+
+@media screen and (min-width: 1200px) {
+    .gallery-btn-3{
+        right: -120px;
+    }
+}
+
 .pitch {
     width: 100%;
     height: 100%;
