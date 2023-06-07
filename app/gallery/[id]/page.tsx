@@ -48,7 +48,7 @@ interface PageProps{
 
     const id = params.id
 
-    let link = `http://localhost:3000/api/post/` + id
+    let link = `https://gallery-probably.vercel.app/api/post/` + id
 
     console.log(link)
 
