@@ -11,8 +11,12 @@ import { cn } from "@/lib/utils"
 import { userAuthSchema } from "@/lib/validations/auth"
 import { buttonVariants } from "@/components/shared/button"
 import { Input } from "@/components/shared/input"
-import { toast } from "@/components/shared/use-toast"
+// import { toast } from "@/components/shared/use-toast"
 import { FormSubmitBtn } from "./button.component"
+import toast, { Toaster } from 'react-hot-toast';
+
+const successToast = () => toast.success("Check your email for a magiclink")
+const errorToast = () => toast.error("Something went wrong")
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -41,23 +45,20 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
 
     setIsLoading(false)
 
-    if (!signInResult?.ok) {
-      return toast({
-        title: "Something went wrong.",
-        description: "Your sign in request failed. Please try again.",
-        variant: "destructive",
-      })
+    if (isLoading){
+      toast.loading("We're sending that email")
     }
 
-    return toast({
-      title: "Check your email",
-      description: "We sent you a login link. Be sure to check your spam too.",
-      variant: "destructive",
-    })
+    if (!signInResult?.ok) {
+      return errorToast()
+    }
+
+    return successToast()
   }
 
   return (
     <div className="flex flex-col my-auto px-36">
+      <Toaster />
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col">
             <Input
               id="email"

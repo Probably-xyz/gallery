@@ -20,7 +20,7 @@ const Sub = Inter({ subsets: ['latin']})
 const Hero = () => {
   const { data: session } = useSession()
 
-
+  
   return (
     <div className="max-w-screen-2xl flex flex-row justify-between px-24 py-44 xl:py-64">
       <div className="flex flex-col">
@@ -30,11 +30,8 @@ const Hero = () => {
       </div>
         </div>
 
-        <Link href="/signin">
-        <ExploreBtnHero/>
-      </Link>
-    
-    {/* {session ? (
+      
+    {session ? (
         <Link href="/gallery">
         <ExploreBtnHero/>
       </Link>
@@ -42,7 +39,7 @@ const Hero = () => {
       <Link href="/signin">
       <ExploreBtnHero/>
     </Link>
-    ): null} */}
+    ): null}
       
       
     </div>

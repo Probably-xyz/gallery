@@ -8,6 +8,7 @@ import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 import { MouseEvent, useState } from "react";
 import {Main, Sub} from "@/styles/fonts"
 import Image from 'next/image'
+import { Skeleton } from './shared/skeleton'
 
 interface PageProps{
   params: {
@@ -92,3 +93,16 @@ const Card: FC<PageProps> = ({ params} ) => {
 }
 
 export default Card
+
+
+ export function CardSkeleton() {
+  return (
+    <div className="p-4">
+      <div className="space-y-3">
+        <Skeleton className="h-5 w-2/5" />
+        <Skeleton className="h-4 w-4/5" />
+      </div>
+    </div>
+  )
+}
+

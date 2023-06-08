@@ -7,6 +7,9 @@ import {BiLinkExternal} from "react-icons/bi"
 import Link from 'next/link'
 import { Main, Sub } from '@/styles/fonts'
 import { FormSubmitBtn } from '@/components/button.component'
+import { getServerSession } from 'next-auth'
+import { authOptions } from '@/lib/auth'
+import prisma from '@/lib/prisma'
 
 
 interface PageProps{
@@ -21,7 +24,11 @@ interface PageProps{
 
 
    export default async function Slug({params}: PageProps) {
+    const session = getServerSession(authOptions)
 
+    // const user = await prisma.user.findUnique({
+    //   where: {email:  session.user.email}
+    // })
 
     const id = params.id
 

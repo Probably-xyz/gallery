@@ -2,7 +2,7 @@
 import {Main, Sub} from "@/styles/fonts"
 import Link from "next/link"
 import React from 'react'
-import { useSession } from "next-auth/react"
+import { signOut, useSession } from "next-auth/react"
 import { authOptions } from "@/lib/auth"
 // import { useSignInModal } from "./layout/signInModal";
 
@@ -49,13 +49,22 @@ export const GalleryNav = () => {
         </Link>
             
             
-       
+       <ul className="flex flex-row">
+       <li className="content__item mr-10">
+            <a onClick={() => signOut()} href="#" style={Sub.style} 
+                className="link link--elara text-base text-prbly-black font-light mt-10" data-text="Contact Us">
+            <span> Signout</span>
+            </a>
+        </li>
+
         <li className="content__item">
             <a href="#" style={Sub.style} 
                 className="link link--elara text-base text-prbly-black font-light mt-10" data-text="Contact Us">
             <span> Contact Us</span>
             </a>
         </li>
+       </ul>
+       
         </div>
     </nav>
     )
@@ -70,9 +79,27 @@ export const GalleryNav = () => {
                 Copyright © 2023 Probably
                 </h1>
     
-                <h1 style={Sub.style} className="text-base text-prbly-black font-light ">   
-                Entrepreneurs are 50% more likely to have mental health conditions
-                </h1>
+                <div className="switch-text">
+                    <span style={Sub.style} className="text-base text-prbly-black font-light text-1">   
+                        Entrepreneurs are 50% more likely to have mental health conditions
+                    </span>
+
+                    <span style={Sub.style} className="text-base text-prbly-black font-light text-1">   
+                        Entrepreneurs are 50% more likely to have mental health conditions
+                    </span>
+
+                    <span style={Sub.style} className="text-base text-prbly-black font-light text-1">   
+                        Entrepreneurs are 50% more likely to have mental health conditions
+                    </span>
+
+                    <span style={Sub.style} className="text-base text-prbly-black font-light text-1">   
+                        Entrepreneurs are 50% more likely to have mental health conditions
+                    </span>
+
+                    <span style={Sub.style} className="text-base text-prbly-black font-light text-1">   
+                        Entrepreneurs are 50% more likely to have mental health conditions
+                    </span>
+                </div>
     
                 <ul style={Sub.style} className="text-base font-normal flex md:space-x-5 ">
                   <li className="content__item">

@@ -13,18 +13,18 @@ import { redirect } from 'next/navigation';
 
 export default async function Gallery()  {
 
-  // const session = await getServerSession(authOptions);
+  const session = await getServerSession(authOptions);
 
-  //  if (!session) {
-  //   redirect("/");
-  // }
+   if (!session) {
+    redirect("/");
+  }
 
   const { posts } = await getPosts()
 
   return (
-    <>
-    <div>
-   
+  
+    
+   <>
     <main className="fixed z-30 overflow-hidden">
         <GalleryNav/>
 
@@ -58,9 +58,9 @@ export default async function Gallery()  {
         </div>
     </div>
       
-      
-    </div>
+     </> 
     
-    </>
+    
+   
   )
 }
