@@ -1,51 +1,27 @@
-import Modal from "@/components/shared/modal";
-import { signIn } from "next-auth/react";
-import {
-  useState,
-  Dispatch,
-  SetStateAction,
-  useCallback,
-  useMemo,
-} from "react";
-import {Sub, Main} from "@/styles/fonts"
-import Link from "next/link";
+// import { useState } from 'react'
+// import { Dialog } from '@headlessui/react'
 
-const SlugModal = ({
-  showSlugModal,
-  setShowSlugModal,
-}: {
-  showSlugModal: boolean;
-  setShowSlugModal: Dispatch<SetStateAction<boolean>>;
- 
-}) => {
-  const [slugClicked, setSlugClicked] = useState(false);
+// function MyDialog() {
+//   let [isOpen, setIsOpen] = useState(true)
 
-  return (
-    <Modal showModal={showSlugModal} setShowModal={setShowSlugModal}>
-      
-        <h1> HELLO </h1>
+//   return (
+//     <Dialog open={isOpen} onClose={() => setIsOpen(false)}>
+//       <Dialog.Panel>
+//         <Dialog.Title>Deactivate account</Dialog.Title>
+//         <Dialog.Description>
+//           This will permanently deactivate your account
+//         </Dialog.Description>
 
-     
-    </Modal>
-  );
-};
+//         <p>
+//           Are you sure you want to deactivate your account? All of your data
+//           will be permanently removed. This action cannot be undone.
+//         </p>
 
-export function useSlugModal() {
-  const [showSlugModal, setShowSlugModal] = useState(true);
+//         <button onClick={() => setIsOpen(false)}>Deactivate</button>
+//         <button onClick={() => setIsOpen(false)}>Cancel</button>
+//       </Dialog.Panel>
+//     </Dialog>
+//   )
+// }
 
-  
-
-  const SlugModalCallback = useCallback(() => {
-    return (
-      <SlugModal
-            showSlugModal={showSlugModal}
-            setShowSlugModal={setShowSlugModal}/>
-    );
-  }, [showSlugModal, setShowSlugModal]);
-
-  return useMemo(
-    () => ({ setShowSlugModal, SlugModal: SlugModalCallback }),
-    [setShowSlugModal, SlugModalCallback],
-  );
-}
-
+// export default MyDialog

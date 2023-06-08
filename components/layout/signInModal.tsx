@@ -54,10 +54,10 @@ const SignInModal = ({
                 <span> Contact Us</span>
             </a>
 
-            <Link href="/" style={Sub.style} 
+            {/* <Link href="/" style={Sub.style} 
                 className="link link--elara auth-button-home text-base text-prbly-black font-light" data-text="Contact Us">
                 <span> Home </span>
-            </Link>
+            </Link> */}
 
         </div>
 

@@ -4,11 +4,11 @@ import { Toaster } from "@/components/shared/toaster";
 
 export default function GalleryLayout({
     children,
-    pop, 
+    modal, 
     props,
   }: {
     children: React.ReactNode;
-    pop: React.ReactNode;
+    modal: React.ReactNode;
     props: React.ReactNode;
   }) {
     return (
@@ -16,9 +16,8 @@ export default function GalleryLayout({
      <html>
        <body>
           <Toaster/> 
-          {pop}
+          {modal}
           {children}
-          
       </body>
      </html>
   
