@@ -2,6 +2,8 @@
 import {Main, Sub} from "@/styles/fonts"
 import Link from "next/link"
 import React from 'react'
+import { useSession } from "next-auth/react"
+import { authOptions } from "@/lib/auth"
 // import { useSignInModal } from "./layout/signInModal";
 
 

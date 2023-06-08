@@ -12,6 +12,7 @@ import { userAuthSchema } from "@/lib/validations/auth"
 import { buttonVariants } from "@/components/shared/button"
 import { Input } from "@/components/shared/input"
 import { toast } from "@/components/shared/use-toast"
+import { FormSubmitBtn } from "./button.component"
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -56,13 +57,8 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
   }
 
   return (
-    <div className={cn("grid gap-6", className)} {...props}>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="grid gap-2">
-          <div className="grid gap-1">
-            <label className="sr-only" htmlFor="email">
-              Email
-            </label>
+    <div className="flex flex-col my-auto px-36">
+      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col">
             <Input
               id="email"
               placeholder="name@example.com"
@@ -72,23 +68,18 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
               autoCorrect="off"
               disabled={isLoading || isGitHubLoading}
               {...register("email")}
+             
             />
             {errors?.email && (
               <p className="px-1 text-xs text-red-600">
                 {errors.email.message}
               </p>
             )}
-          </div>
-          <button className={cn(buttonVariants())} disabled={isLoading}>
-            {isLoading && (
-              <span className="mr-2 h-4 w-4 animate-spin" >  </span>
-            )}
-            Sign In with Email
-          </button>
-        </div>
+         
+          <FormSubmitBtn />
+           
+          
       </form>
-
-      
     </div>
   )
 }

@@ -10,6 +10,7 @@ import { motion } from "framer-motion"
 
 import { Familjen_Grotesk, Inter } from "next/font/google";
 import { ExploreBtnHero } from '@/components/button.component'
+import { useSession } from 'next-auth/react'
 
 const Main = Familjen_Grotesk({ subsets: ['latin']})
 const Sub = Inter({ subsets: ['latin']})
@@ -17,6 +18,9 @@ const Sub = Inter({ subsets: ['latin']})
 
 
 const Hero = () => {
+  const { data: session } = useSession()
+
+
   return (
     <div className="max-w-screen-2xl flex flex-row justify-between px-24 py-44 xl:py-64">
       <div className="flex flex-col">
@@ -25,10 +29,21 @@ const Hero = () => {
           <p className="text-prbly-gray pt-2">  A platform that supports, connects, and nurtures entreprenuers  </p>
       </div>
         </div>
-    
-      <Link href="/gallery">
+
+        <Link href="/signin">
         <ExploreBtnHero/>
       </Link>
+    
+    {/* {session ? (
+        <Link href="/gallery">
+        <ExploreBtnHero/>
+      </Link>
+    ) : !session ? (
+      <Link href="/signin">
+      <ExploreBtnHero/>
+    </Link>
+    ): null} */}
+      
       
     </div>
   )

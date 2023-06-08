@@ -7,6 +7,7 @@ import { useSession } from 'next-auth/react'
 import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 import { MouseEvent, useState } from "react";
 import {Main, Sub} from "@/styles/fonts"
+import Image from 'next/image'
 
 interface PageProps{
   params: {
@@ -47,7 +48,7 @@ const Card: FC<PageProps> = ({ params} ) => {
   const { data: session } = useSession()
 
   return (
-   <div className="card text-prbly-accent">
+   
     <Link href={`/gallery/post/` + params.id}>
     <div
         className="group cursor-pointer flex flex-col card relative  shadow-2xl"
@@ -67,15 +68,15 @@ const Card: FC<PageProps> = ({ params} ) => {
         />
           <div className="flex flex-row px-4 py-6 z-10">
             
-                <Image src={"https:" + logo.fields.file.url} width={100} height={100} alt={name}/>
+                <Image src={params.logo} width={100} height={100} alt={params.name}/>
              
                 <div className="flex flex-col">
-                  <h1 className="ml-4 text-2xl text-prbly-dark font-bold" style={Main.style}> {name} </h1>
-                  <p className="ml-4"> {tagline} </p>
+                  <h1 className="ml-4 text-2xl text-prbly-dark font-bold" style={Main.style}> {params.name} </h1>
+                  <p className="ml-4"> {params.tagline} </p>
                   <div className="flex flex-row px-4 pt-6">
-                    <div className="industry-card flex"> <span className="text-xs text-prbly-dark flex m-auto items-center" style={Sub.style}> {industry} </span> </div>
-                    <div className="industry-card flex"> <span className="text-xs text-prbly-dark flex m-auto items-center" style={Sub.style}> {stage} </span> </div>
-                    <div className="industry-card flex"> <span className="text-xs text-prbly-dark flex m-auto items-center" style={Sub.style}> {investStage} </span> </div>
+                    <div className="industry-card flex"> <span className="text-xs text-prbly-dark flex m-auto items-center" style={Sub.style}> {params.industry} </span> </div>
+                    <div className="industry-card flex"> <span className="text-xs text-prbly-dark flex m-auto items-center" style={Sub.style}> {params.stage} </span> </div>
+                    <div className="industry-card flex"> <span className="text-xs text-prbly-dark flex m-auto items-center" style={Sub.style}> {params.investStage} </span> </div>
                 </div>
                 </div>
                
@@ -85,7 +86,7 @@ const Card: FC<PageProps> = ({ params} ) => {
       </div>
     </Link>
    
-   </div>
+  
    
   )
 }

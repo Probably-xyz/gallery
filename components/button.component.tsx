@@ -27,6 +27,21 @@ export const ExploreBtnHero = () => {
 }
 
 
+export const FormSubmitBtn = () => {
+  return (
+    <button className="gallery-btn flex flex-row">
+      <div className="flex my-auto shine-anim">
+        <span style={Sub.style} className="text-prbly-dark text-base flex my-auto ml-3"> Submit 
+          <RxDoubleArrowRight className="flex my-auto text-base text-prbly-dark ml-3"/>
+        </span>
+      </div>
+    </button>
+  )
+}
+  
+
+
+
 export const SignOutBtn = () => {
     return (
       <button onClick={() => signOut()}> 
