@@ -6,7 +6,7 @@ import {FaLinkedinIn} from "react-icons/fa"
 import {BiLinkExternal} from "react-icons/bi"
 import Link from 'next/link'
 import { Main, Sub } from '@/styles/fonts'
-import { FormSubmitBtn } from '@/components/button.component'
+import { EmailForm, FormSubmitBtn } from '@/components/button.component'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
 import prisma from '@/lib/prisma'
@@ -17,7 +17,9 @@ interface PageProps{
       name: string,
       description: string,
       id: string,
-      pitch: string
+      pitch: string,
+      linkedin: string,
+      website: string,
     }
     
   }
@@ -26,10 +28,7 @@ interface PageProps{
    export default async function Slug({params}: PageProps) {
     const session = getServerSession(authOptions)
 
-    // const user = await prisma.user.findUnique({
-    //   where: {email:  session.user.email}
-    // })
-
+  
     const id = params.id
 
     let link = `http://localhost:3000/api/post/` + id
@@ -61,11 +60,11 @@ interface PageProps{
               <h1 className="text-6xl font-semibold text-prbly-dark mt-14 ml-20" style={Main.style}> {data.name} </h1>
               <ul className="flex flex-row mt-14">
                 <li>
-                  <Link href="/" target="_blank">
+                  <Link href={data.linkedin} target="_blank">
                     <FaLinkedinIn className="text-2xl mr-10"/>
                   </Link>
                 </li>
-                <Link href="/" target="_blank">
+                <Link href={data.website} target="_blank">
                   <BiLinkExternal className="text-2xl mr-10"/>
                 </Link>
               </ul>
@@ -85,7 +84,7 @@ interface PageProps{
                 
              </div>
              <div className="flex mx-auto items-center mt-8">
-                <FormSubmitBtn />
+                <EmailForm />
              </div>
         </div>
 </div>

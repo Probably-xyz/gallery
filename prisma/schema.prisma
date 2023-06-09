@@ -59,6 +59,8 @@ model Post {
     stage        String
     investStage  String
     logo         String
+    linkedin     String
+    website      String
 }
 
 

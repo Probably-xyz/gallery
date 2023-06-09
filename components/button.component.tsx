@@ -38,6 +38,18 @@ export const FormSubmitBtn = () => {
     </button>
   )
 }
+
+export const EmailForm = () => {
+  return (
+    <button className="gallery-btn flex flex-row">
+      <div className="flex my-auto shine-anim">
+        <span style={Sub.style} className="text-prbly-dark text-base flex my-auto ml-3"> Request more information 
+          <RxDoubleArrowRight className="flex my-auto text-base text-prbly-dark ml-3"/>
+        </span>
+      </div>
+    </button>
+  )
+}
   
 
 
