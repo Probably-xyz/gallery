@@ -16,7 +16,7 @@ const Hero = () => {
   const { data: session } = useSession();
 
   return (
-    <div className="max-w-screen-2xl flex flex-row justify-between px-24 py-44">
+    <div className="max-w-screen-2xl flex flex-row justify-between px-24 py-44 2xl:py-56">
       <div className="flex flex-col">
         <div className={Main.className}>
           <h1 className="text-7xl hero uppercase leading-tight font-bold">

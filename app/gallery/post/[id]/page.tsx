@@ -47,6 +47,8 @@ interface PageProps{
 
       const data = await getData(link)
 
+      console.log(data)
+
 
 
       return (
@@ -64,9 +66,9 @@ interface PageProps{
                     <FaLinkedinIn className="text-2xl mr-10"/>
                   </Link>
                 </li>
-                <Link href={data.website} target="_blank">
+                {/* <Link href={data.website} target="_blank"> */}
                   <BiLinkExternal className="text-2xl mr-10"/>
-                </Link>
+                {/* </Link> */}
               </ul>
             </div>
             

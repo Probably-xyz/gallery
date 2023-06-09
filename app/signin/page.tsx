@@ -14,7 +14,7 @@ export default function SignIn() {
   return (
     <>
       <main className='flex un-approved h-screen w-screen overflow-hidden'>
-          <div className="flex justify-between m-auto auth-box">
+          <div className="flex justify-between m-auto auth-box-2">
               <div className="flex flex-col my-auto px-24">
                   <h1 className="text-5xl xl:text-7xl font-semibold" style={Main.style}> 
                     Enter your email
