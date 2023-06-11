@@ -121,7 +121,7 @@
 }
 
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1500px) {
     .gallery-btn-3{
         right: -150px;
     }
@@ -211,6 +211,17 @@
     height: 780px;
     position: relative;
     bottom: 60px;
+    border-radius: 10px;
+    border: 3px solid #333;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    background-color: rgb(255, 255, 255);
+    background-image: radial-gradient(at 100% 60%, rgb(229, 229, 229) 0, transparent 100%), radial-gradient(at 100% 100%, rgb(253, 224, 71) 0, transparent 53%), radial-gradient(at 16% 55%, rgb(214, 211, 209) 0, transparent 0%), radial-gradient(at 100% 100%, rgb(107, 33, 168) 0, transparent 100%);
+  }
+
+
+  .auth-box-modal{
+    width: 1300px;
+    height: 820px;
     border-radius: 10px;
     border: 3px solid #333;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));

@@ -26,14 +26,28 @@ interface PageProps{
 
 
    export default async function Slug({params}: PageProps) {
-    const session = getServerSession(authOptions)
+    const session = await getServerSession(authOptions)
 
-  
+    const email = session?.user.email
+
+    const user = await prisma.user.findUnique({
+      where: {email: email}
+    })
+
+    console.log(user)
+
+    // console.log(email)
+
+    if (!user?.approved){
+      redirect("/unAuth")
+    }
+
+
     const id = params.id
 
     let link = `http://localhost:3000/api/post/` + id
 
-    console.log(link)
+    // console.log(link)
 
     async function getData(link: any) {
       const res = await fetch(link, {next: {revalidate: 10}})
@@ -47,7 +61,7 @@ interface PageProps{
 
       const data = await getData(link)
 
-      console.log(data)
+      // console.log(data)
 
 
 

@@ -30,7 +30,7 @@ const SignInModal = ({
 
   return (
     <Modal showModal={showSignInModal} setShowModal={setShowSignInModal}>
-      <div className="flex justify-between m-auto auth-box">
+      <div className="flex justify-between m-auto auth-box-modal">
        
      
 
@@ -40,7 +40,7 @@ const SignInModal = ({
 
 
           <div className="my-auto">
-          <h1 className="text-5xl xl:text-7xl font-semibold" style={Main.style}> 
+          <h1 className="text-6xl 2xl:text-7xl font-semibold" style={Main.style}> 
               Enter your email
             </h1>
             <p style={Sub.style} className="text-base xl:text-lg text-prbly-dark mt-5">  
