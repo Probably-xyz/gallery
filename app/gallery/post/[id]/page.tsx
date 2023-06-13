@@ -34,9 +34,9 @@ interface PageProps{
       where: {email: email}
     })
 
-    console.log(user)
+    console.log(user) 
 
-    // console.log(email)
+    console.log(email)
 
     if (!user?.approved){
       redirect("/unAuth")
@@ -47,7 +47,6 @@ interface PageProps{
 
     let link = `http://localhost:3000/api/post/` + id
 
-    // console.log(link)
 
     async function getData(link: any) {
       const res = await fetch(link, {next: {revalidate: 10}})
@@ -61,7 +60,6 @@ interface PageProps{
 
       const data = await getData(link)
 
-      // console.log(data)
 
 
 
