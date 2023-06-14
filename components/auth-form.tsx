@@ -17,6 +17,7 @@ import toast, { Toaster } from 'react-hot-toast';
 
 const successToast = () => toast.success("Check your email for a magiclink")
 const errorToast = () => toast.error("Something went wrong")
+const loadingToast = () => toast.loading("We're sending that email")
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -35,6 +36,10 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
   const searchParams = useSearchParams()
 
   async function onSubmit(data: FormData) {
+
+    
+    const toastLoad = toast.loading("We're sending that email")
+
     setIsLoading(true)
 
     const signInResult = await signIn("email", {
@@ -43,18 +48,23 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
       callbackUrl: searchParams?.get("from") || "/gallery",
     })
 
-    setIsLoading(false)
 
-    if (isLoading){
-      toast.loading("We're sending that email")
+    if (signInResult?.ok || !signInResult?.ok){
+      toast.remove(toastLoad)
     }
+    
+    
+   
 
     if (!signInResult?.ok) {
-      return errorToast()
+      return toast.error("Something went wrong")
     }
 
-    return successToast()
+    if (signInResult.ok) {
+      return toast.success(`Email sent to ${data.email}`)
   }
+
+}
 
   return (
     <div className="flex flex-col my-auto px-36">

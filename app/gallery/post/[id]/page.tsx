@@ -20,10 +20,11 @@ interface PageProps{
       pitch: string,
       linkedin: string,
       website: string,
+      email: any,
     }
-    
   }
 
+  
 
    export default async function Slug({params}: PageProps) {
     const session = await getServerSession(authOptions)
@@ -31,21 +32,27 @@ interface PageProps{
     const email = session?.user.email
 
     const user = await prisma.user.findUnique({
-      where: {email: email}
+
+      where: {email: email!}
+
     })
+
 
     console.log(user) 
 
     console.log(email)
 
-    if (!user?.approved){
+    if (!user?.approved) {
+
       redirect("/unAuth")
+
     }
 
 
     const id = params.id
 
     let link = `http://localhost:3000/api/post/` + id
+    
 
 
     async function getData(link: any) {
@@ -56,12 +63,29 @@ interface PageProps{
       }
 
       return res.json()
+
+     
   }
 
       const data = await getData(link)
 
+      const name = data.name
 
 
+      let linkTwo = `http://localhost:3000/api/email/` + name
+      
+      async function sendMail(linkTwo: any){
+        'use server'
+        const res = await fetch(linkTwo)
+
+        if (!res.ok){
+          return res.json()
+        }
+
+        return res.json()
+      }
+
+      
 
       return (
           <>
@@ -98,7 +122,10 @@ interface PageProps{
                 
              </div>
              <div className="flex mx-auto items-center mt-8">
+              <Link href={linkTwo}>
                 <EmailForm />
+              </Link>
+
              </div>
         </div>
 </div>
