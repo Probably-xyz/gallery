@@ -1,6 +1,7 @@
 "use client"
 
-import React from 'react'
+import React, { MouseEventHandler } from 'react';
+
 import { signIn, signOut } from "next-auth/react"
 import {RxDoubleArrowRight} from "react-icons/rx"
 import {Sub, Main} from "@/styles/fonts"
@@ -39,9 +40,13 @@ export const FormSubmitBtn = () => {
   )
 }
 
-export const EmailForm = ({}) => {
+interface EmailFormProps {
+  submitFunc: MouseEventHandler<HTMLButtonElement>;
+}
+
+export const EmailForm: React.FC<EmailFormProps> = ({submitFunc}) => {
   return (
-    <button className="gallery-btn flex flex-row"  type="submit">
+    <button className="gallery-btn flex flex-row"  onClick={submitFunc}>
       <div className="flex my-auto shine-anim">
         <span style={Sub.style} className="text-prbly-dark text-base flex my-auto ml-3"> Request more information 
           <RxDoubleArrowRight className="flex my-auto text-base text-prbly-dark ml-3"/>

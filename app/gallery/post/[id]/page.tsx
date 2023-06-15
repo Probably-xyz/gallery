@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react'
 import { FC } from "react"
 import { notFound, redirect } from 'next/navigation'
@@ -38,9 +39,7 @@ interface PageProps{
     })
 
 
-    console.log(user) 
 
-    console.log(email)
 
     if (!user?.approved) {
 
@@ -56,15 +55,13 @@ interface PageProps{
 
 
     async function getData(link: any) {
-      const res = await fetch(link, {next: {revalidate: 10}})
+      const res = await fetch(link, {next: {revalidate: 80}})
 
       if (!res.ok){
           return notFound()
       }
 
       return res.json()
-
-     
   }
 
       const data = await getData(link)
@@ -75,7 +72,7 @@ interface PageProps{
       let linkTwo = `http://localhost:3000/api/email/` + name
       
       async function sendMail(linkTwo: any){
-        'use server'
+        "use server"
         const res = await fetch(linkTwo)
 
         if (!res.ok){
@@ -84,6 +81,8 @@ interface PageProps{
 
         return res.json()
       }
+
+     
 
       
 
@@ -122,10 +121,11 @@ interface PageProps{
                 
              </div>
              <div className="flex mx-auto items-center mt-8">
-              <Link href={linkTwo}>
-                <EmailForm />
-              </Link>
 
+                  
+
+                <EmailForm submitFunc={sendMail}/>
+             
              </div>
         </div>
 </div>

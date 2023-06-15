@@ -64,9 +64,9 @@ const SignInModal = ({
         
         
 
-<UserAuthForm/>
+      <UserAuthForm/>
 
-</div>
+    </div>
 
      
     </Modal>

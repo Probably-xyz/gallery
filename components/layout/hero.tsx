@@ -29,15 +29,12 @@ const Hero = () => {
         </div>
       </div>
 
-      {session ? (
-        <Link href="/gallery">
-          <ExploreBtnHero />
-        </Link>
-      ) : !session ? (
+      
         <Link href="/signin">
           <ExploreBtnHero />
         </Link>
-      ) : null}
+     
+       
     </div>
   );
 };

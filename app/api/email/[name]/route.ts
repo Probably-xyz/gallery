@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
-// import { EmailTemplate } from '@/lib/emails/InvestorEmail';
+import { InvestorEmail } from '@/lib/emails/InvestorEmail';
 
 
 
@@ -21,6 +21,7 @@ export async function GET(
       to: `${session?.user.email}`,
       subject: `Request for ${params.name}`,
       html: "<div> <p> Email for</p> </div>",
+      react: InvestorEmail()
     });
 
     return NextResponse.json(data);
