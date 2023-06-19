@@ -1,7 +1,7 @@
 "use client"
 
 import React, { MouseEventHandler } from 'react';
-
+import {FC} from "react"
 import { signIn, signOut } from "next-auth/react"
 import {RxDoubleArrowRight} from "react-icons/rx"
 import {Sub, Main} from "@/styles/fonts"
@@ -40,19 +40,44 @@ export const FormSubmitBtn = () => {
   )
 }
 
-interface EmailFormProps {
-  submitFunc: MouseEventHandler<HTMLButtonElement>;
+interface EmailProps{
+  params: {
+    name: string,
+    image: string,
+  }
 }
 
-export const EmailForm: React.FC<EmailFormProps> = ({submitFunc}) => {
+
+
+export const EmailForm:FC <EmailProps> = ({params}) => {
+
+  async function handleOnSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
+    e.preventDefault();
+
+  
+
+    await fetch('/api/email', {
+      method: 'POST',
+      body: JSON.stringify({
+        name: params.name,
+        image: params.image,
+      })
+    })
+
+    
+  }
+
   return (
-    <button className="gallery-btn flex flex-row"  onClick={submitFunc}>
+    <form onSubmit={handleOnSubmit}>
+      <button className="gallery-btn flex flex-row" type="submit">
       <div className="flex my-auto shine-anim">
         <span style={Sub.style} className="text-prbly-dark text-base flex my-auto ml-3"> Request more information 
           <RxDoubleArrowRight className="flex my-auto text-base text-prbly-dark ml-3"/>
         </span>
       </div>
-    </button>
+    </button> 
+    </form>
+   
   )
 }
   
