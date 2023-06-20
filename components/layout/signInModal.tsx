@@ -15,6 +15,7 @@ import { UserAuthForm } from "../auth-form";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { useRouter } from "next/navigation";
 import { redirect } from "next/navigation";
+import useWindowSize from "@/lib/hooks/use-window-size";
 
 const SignInModal = ({
   showSignInModal,
@@ -28,15 +29,15 @@ const SignInModal = ({
 
   const router = useRouter()
 
+  const { isMobile, isDesktop } = useWindowSize();
+
   return (
     <>
+
+{isDesktop && (
     <Modal showModal={showSignInModal} setShowModal={setShowSignInModal}>
-      <div className="flex justify-between m-auto auth-box-modal">
-
-
-
+            <div className="flex justify-between m-auto auth-box-modal">
         <div className="flex lg:flex-col flex-row px-24 ">
-
           <IoIosArrowRoundBack className="lg:text-4xl text-6xl text-prbly-dark cursor-pointer relative top-20" onClick={() => router.back()} />
 
 
@@ -56,24 +57,36 @@ const SignInModal = ({
 
       </div>
 
-      <div className="auth-box-mobile flex items-center">
-        <div className="flex flex-col m-auto px-4">
-        <div className="flex flex-col">
-          <IoIosArrowRoundBack className="text-4xl text-prbly-dark cursor-pointer relative" onClick={() => router.back()} />
-          <div className="m-auto">
-              <h1 className="text-3xl font-semibold text-center pt-10" style={Main.style}>
-                Enter your email
-              </h1>
-              <p style={Sub.style} className="text-base mt-2 text-prbly-dark text-center">
-                Please log in or sign up to get full access to Probably
-              </p>
-          </div>
-        </div>
-        <UserAuthForm />
-        </div>
-      </div>
-
     </Modal>
+   )}
+      
+{isMobile && (
+  <Modal showModal={showSignInModal} setShowModal={setShowSignInModal}>
+  <div className="auth-box-mobile flex items-center">
+    <div className="flex flex-col m-auto px-4">
+    <div className="flex flex-col">
+      <IoIosArrowRoundBack className="text-4xl text-prbly-dark cursor-pointer relative" onClick={() => router.back()} />
+      <div className="m-auto">
+          <h1 className="text-3xl font-semibold text-center pt-10" style={Main.style}>
+            Enter your email
+          </h1>
+          <p style={Sub.style} className="text-base mt-2 text-prbly-dark text-center">
+            Please log in or sign up to get full access to Probably
+          </p>
+      </div>
+    </div>
+    <UserAuthForm />
+    </div>
+  </div>
+</Modal>
+)}
+    
+
+   
+  
+    
+
+      
     
     </>
   );

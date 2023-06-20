@@ -67,7 +67,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
 }
 
   return (
-    <div className="flex flex-col my-auto xl:px-36 lg:px-24 mx-auto lg:mx-0">
+    <div className="flex flex-col my-auto 2xl:px-40 xl:px-36 lg:px-24 mx-auto">
       <Toaster />
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col">
             <Input
