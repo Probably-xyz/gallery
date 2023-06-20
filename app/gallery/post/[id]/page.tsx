@@ -51,7 +51,7 @@ interface PageProps{
 
     const id = params.id
 
-    let link = `http://localhost:3000/api/post/` + id
+    let link = `/api/post/` + id
     
 
 
