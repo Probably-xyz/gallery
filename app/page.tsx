@@ -13,6 +13,8 @@ export default async function Home() {
   // if (session) {
   //   redirect("/gallery");
   // }
+
+
   return (
    <div>
       <MainNav/>

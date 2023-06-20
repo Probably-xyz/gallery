@@ -64,9 +64,6 @@
 
 .gallery-btn-3{
     position: relative;
-    right: 20px;
-    top: 100px;
-    width: 250px;
 }
 
 .shine-anim{
@@ -121,11 +118,47 @@
 }
 
 
-@media screen and (min-width: 1500px) {
-    .gallery-btn-3{
-        right: -150px;
+@media screen and (max-width: 500px) {
+    .gallery-btn-3 {
+        width: 200px;
+        margin-top: 25px;
     }
 }
+
+@media screen and (min-width: 768px) {
+    .gallery-btn-3 {
+        width: 250px;
+        margin-top: 70px;
+    }
+}
+
+
+@media screen and (min-width: 1000px) {
+    .gallery-btn-3{
+        right: 0px;
+        width: 200px;
+        margin-top: 40px;
+    }
+}
+
+
+@media screen and (min-width: 1300px) {
+    .gallery-btn-3{
+        right: 0px;
+        width: 250px;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    .gallery-btn-3{
+        width: 250px;
+        position: absolute;
+        right: 350px;
+        margin-top: 60px;
+    }
+}
+
+
 
 .grid-gallery{
     height: 550px;
@@ -227,6 +260,19 @@
     background-image: radial-gradient(at 100% 60%, rgb(229, 229, 229) 0, transparent 100%), radial-gradient(at 100% 100%, rgb(253, 224, 71) 0, transparent 53%), radial-gradient(at 16% 55%, rgb(214, 211, 209) 0, transparent 0%), radial-gradient(at 100% 100%, rgb(107, 33, 168) 0, transparent 100%);
   }
 
+  @media screen and (max-width: 1300px) {
+    .auth-box-modal{
+        width: 900px;
+        height: 700px;
+    }
+  }
+
+  @media screen and (max-width: 768px){
+        .auth-box-modal{
+            width: 400px;
+        }
+  }
+
 
   .auth-button{
     position: absolute;
@@ -257,6 +303,23 @@
     }
   }
 
+  @media screen and (max-width: 1200px) {
+    /* .auth-box{
+        width: 1400px;
+        height: 860px;
+    } */
+
+    .auth-button{
+        top: 640px;
+    }
+
+
+    .auth-button-home{
+        top: 760px;
+        left: 1600px;
+    }
+  }
+
 
   .email-form{
     outline: none;
@@ -267,6 +330,16 @@
     border-radius: 5px;
     transition: 0.3s ease-in;
     background-color: transparent;
+    position: relative;
+    top: 20px;
+    margin-bottom: 40px;
+  }
+
+  @media screen and (max-width: 1024px) {
+        .email-form{
+            width: 290px;
+            
+        }
   }
 
   .email-form:focus{

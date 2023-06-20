@@ -16,7 +16,7 @@ export default async function Gallery()  {
   const session = await getServerSession(authOptions);
 
    if (!session) {
-    redirect("/signin");
+    redirect("/");
   }
 
   const { posts } = await getPosts()

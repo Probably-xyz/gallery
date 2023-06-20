@@ -2,7 +2,9 @@
 
 import { Main, Sub } from '@/styles/fonts'
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 import React, {FC} from 'react'
+import toast, { Toaster } from 'react-hot-toast'
 import { BiLinkExternal } from 'react-icons/bi'
 import { FaLinkedinIn } from 'react-icons/fa'
 import { IoIosArrowRoundBack } from 'react-icons/io'
@@ -18,68 +20,91 @@ interface SlugProps {
         industry: string,
         pitch: string,
         stage: string,
+        id: string,
     }
 }
 
 const Slug: FC <SlugProps> = ({params}) => {
 
-    async function handleOnSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
-        e.preventDefault();
-    
-      
-    
-        await fetch('/api/email', {
-          method: 'POST',
-         
-        })
-    
-        
-      }
+  
 
+
+  // let link = `http://localhost:3000/api/email` + id
+  
+  async function sendEmail() {
+
+
+    const toastLoad = toast.loading("We're sending that email")
+
+    const id = params.id
+
+    console.log(id)
+
+
+    let link = `http://localhost:3000/api/email/` + id
+
+    await fetch(link, {
+      method: "GET"
+    })
+
+
+    toast.remove(toastLoad)
+    toast.success("Email sent")
+
+  
+}
+
+
+
+    
   return (
+    <>
+    <Toaster />
     <div className="flex w-screen h-screen overflow-hidden">
-    <div className="flex flex-col slug-box items-center m-auto">
+      <div className="flex flex-col slug-box items-center m-auto">
         <div className="flex flex-row justify-between w-full px-10">
           <Link href="/gallery">
-          <IoIosArrowRoundBack className="text-4xl text-prbly-dark mt-14 cursor-pointer" />
+            <IoIosArrowRoundBack className="text-4xl text-prbly-dark mt-14 cursor-pointer" />
           </Link>
           <h1 className="text-6xl font-semibold text-prbly-dark mt-14 ml-20" style={Main.style}> {params.name} </h1>
           <ul className="flex flex-row mt-14">
             <li>
               <Link href={params.linkedin} target="_blank">
-                <FaLinkedinIn className="text-2xl mr-10"/>
+                <FaLinkedinIn className="text-2xl mr-10" />
               </Link>
             </li>
             {/* <Link href={data.website} target="_blank"> */}
-              <BiLinkExternal className="text-2xl mr-10"/>
+            <BiLinkExternal className="text-2xl mr-10" />
             {/* </Link> */}
           </ul>
         </div>
-        
+
         <div className="flex flex-row px-4 pt-6">
-              <div className="industry-card-2 flex"> <span className="text-sm text-prbly-dark flex m-auto items-center" style={Sub.style}> {params.industry} </span> </div>
-              <div className="industry-card-2 flex"> <span className="text-sm text-prbly-dark flex m-auto items-center" style={Sub.style}> {params.stage} </span> </div>
-              <div className="industry-card-2 flex"> <span className="text-sm text-prbly-dark flex m-auto items-center" style={Sub.style}> {params.investStage} </span> </div>
+          <div className="industry-card-2 flex"> <span className="text-sm text-prbly-dark flex m-auto items-center" style={Sub.style}> {params.industry} </span> </div>
+          <div className="industry-card-2 flex"> <span className="text-sm text-prbly-dark flex m-auto items-center" style={Sub.style}> {params.stage} </span> </div>
+          <div className="industry-card-2 flex"> <span className="text-sm text-prbly-dark flex m-auto items-center" style={Sub.style}> {params.investStage} </span> </div>
+        </div>
+
+        <div className="pitch-preview mt-10">
+
+          <div className="pitch-deck">
+            <iframe className="w-full h-full" src={params.pitch} />
           </div>
 
-           <div className="pitch-preview mt-10"> 
-           
-            <div className="pitch-deck">
-              <iframe className="w-full h-full" src={params.pitch}/>
-            </div>
-            
-         </div>
-         <form onSubmit={handleOnSubmit} className="flex mx-auto items-center mt-8">
-            <button className="gallery-btn flex flex-row" type="submit">
-                <div className="flex my-auto shine-anim">
-                    <span style={Sub.style} className="text-prbly-dark text-base flex my-auto ml-3"> Request more information 
-                    <RxDoubleArrowRight className="flex my-auto text-base text-prbly-dark ml-3"/>
-                    </span>
-                </div>
-             </button>
-         </form>
+        </div>
+
+
+        <button className="gallery-btn flex flex-row mx-auto mt-6" onClick={sendEmail}>
+          <div className="flex my-auto shine-anim">
+            <span style={Sub.style} className="text-prbly-dark text-base flex my-auto ml-3"> Request more information
+              <RxDoubleArrowRight className="flex my-auto text-base text-prbly-dark ml-3" />
+            </span>
+          </div>
+        </button>
+
+      </div>
     </div>
-</div>
+    </>
   )
 }
 

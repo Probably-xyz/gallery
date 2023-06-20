@@ -9,7 +9,7 @@ export const MainNav = () => {
   return (
     <>
       <nav className="flex items-center w-screen mx-auto">
-        <div className="flex flex-row justify-between mx-auto w-screen px-28 ">
+        <div className="flex flex-row justify-between mx-auto w-screen md:px-28 px-10">
           <Link
             style={Sub.style}
             href="/"
@@ -37,7 +37,7 @@ export const MainNav = () => {
 export const GalleryNav = () => {
   return (
     <nav className="flex items-center w-screen mx-auto">
-      <div className="flex flex-row justify-between mx-auto w-screen px-28">
+      <div className="flex flex-row justify-between mx-auto w-screen md:px-28 px-10">
         <Link
           style={Sub.style}
           href="/"
@@ -49,15 +49,14 @@ export const GalleryNav = () => {
 
         <ul className="flex flex-row">
           <li className="content__item mr-10">
-            <a
+            <button
               onClick={() => signOut()}
-              href="#"
               style={Sub.style}
               className="link link--elara text-base text-prbly-black font-light mt-10"
               data-text="Contact Us"
             >
               <span> Signout</span>
-            </a>
+            </button>
           </li>
 
           <li className="content__item">
@@ -79,12 +78,12 @@ export const GalleryNav = () => {
 export const MainFooter = () => {
   return (
     <footer className="flex items-center w-screen mx-auto relative top-24 border-t border-prbly-dark shadow-inner">
-      <div className="flex flex-row justify-between mx-auto w-screen px-24 pt-10">
+      <div className="flex md:flex-row flex-col justify-between mx-auto w-screen md:px-24 pt-10 px-14">
         <h1 style={Sub.style} className="text-base text-prbly-gray font-light ">
           Copyright © 2023 Probably
         </h1>
 
-        <div className="switch-text">
+        {/* <div className="switch-text">
           <span
             style={Sub.style}
             className="text-base text-prbly-black font-light text-1"
@@ -119,11 +118,11 @@ export const MainFooter = () => {
           >
             Entrepreneurs are 50% more likely to have mental health conditions
           </span>
-        </div>
+        </div> */}
 
         <ul
           style={Sub.style}
-          className="text-base font-normal flex md:space-x-5 "
+          className="text-base font-normal flex md:space-x-5 space-x-8 md:mt-0 mt-2"
         >
           <li className="content__item">
             <a

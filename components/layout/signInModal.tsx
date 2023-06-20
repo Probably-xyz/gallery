@@ -29,47 +29,41 @@ const SignInModal = ({
   const router = useRouter()
 
   return (
-    <Modal showModal={showSignInModal} setShowModal={setShowSignInModal}>
-      <div className="flex justify-between m-auto auth-box-modal">
-       
-     
+    <><Modal showModal={showSignInModal} setShowModal={setShowSignInModal}>
+      <div className="flex lg:flex-row flex-col lg:justify-between justify-center m-auto auth-box-modal ">
 
-          <div className="flex flex-col px-24">
 
-          <IoIosArrowRoundBack className="text-4xl text-prbly-dark cursor-pointer relative top-20" onClick={() => router.back()}/>
+
+        <div className="flex lg:flex-col flex-row px-24 relative top-32">
+
+          <IoIosArrowRoundBack className="lg:text-4xl text-6xl text-prbly-dark cursor-pointer relative top-20" onClick={() => router.back()} />
 
 
           <div className="my-auto">
-          <h1 className="text-6xl 2xl:text-7xl font-semibold" style={Main.style}> 
-              Enter your email
-            </h1>
-            <p style={Sub.style} className="text-base xl:text-lg text-prbly-dark mt-5">  
-            Please log in or sign up to get full access to Probably
-            </p>
+              <h1 className="xl:text-6xl lg:text-5xl font-semibold" style={Main.style}>
+                Enter your email
+              </h1>
+              <p style={Sub.style} className="xl:text-base lg:text-xs text-prbly-dark mt-5 ">
+                Please log in or sign up to get full access to Probably
+              </p>
           </div>
-         
 
-            <a href="#" style={Sub.style} 
+
+          <a href="#" style={Sub.style}
             className="link link--elara auth-button text-base text-prbly-black font-light" data-text="Contact Us">
-                <span> Contact Us</span>
-            </a>
-
-            {/* <Link href="/" style={Sub.style} 
-                className="link link--elara auth-button-home text-base text-prbly-black font-light" data-text="Contact Us">
-                <span> Home </span>
-            </Link> */}
+            <span> Contact Us</span>
+          </a>
 
         </div>
 
-        
-        
+        <UserAuthForm />
 
-      <UserAuthForm/>
+      </div>
 
-    </div>
 
-     
     </Modal>
+    
+    </>
   );
 };
 

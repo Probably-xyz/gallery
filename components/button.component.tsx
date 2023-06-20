@@ -19,7 +19,7 @@ export const ExploreBtnHero = () => {
   return(
     <button className="gallery-btn-3 flex flex-row">
     <div className="flex my-auto shine-anim shine-anim-2">
-      <span style={Sub.style}   className="text-prbly-dark text-2xl flex my-auto ml-3"> Enter Gallery
+      <span style={Sub.style}   className="text-prbly-dark xl:text-2xl lg:text-lg sm:text-2xl text-xl flex my-auto ml-3"> Enter Gallery
         <RxDoubleArrowRight className="flex my-auto text-2xl text-prbly-dark ml-6"/>
       </span>
     </div>

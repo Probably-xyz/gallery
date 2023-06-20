@@ -17,22 +17,24 @@ const Hero = () => {
 
   return (
     
-    <div className="max-w-screen-2xl flex flex-row justify-between px-24 py-44 2xl:py-56">
-      <div className="flex flex-col">
+    <div className="max-w-screen-2xl flex lg:flex-row flex-col justify-between lg:px-24 md:px-12 2xl:py-60 xl:py-[200px] lg:py-[220px] md:py-40 py-44">
+      <div className="flex flex-col lg:mx-0 mx-auto">
         <div className={Main.className}>
-          <h1 className="text-7xl hero uppercase leading-tight font-bold">
+          <h1 className="2xl:text-7xl xl:text-7xl lg:text-5xl md:text-5xl text-3xl hero uppercase leading-tight font-bold lg:text-left text-center">
             The place to get <br /> Founded and Funded
           </h1>
-          <p className="text-prbly-gray pt-2">
-            A platform that supports, connects, and nurtures entreprenuers
+          <p className="text-prbly-gray pt-2 text-sm sm:text-base lg:text-left text-center">
+              Submit your startup and showcase it to a group of investors, it’s that easy.
           </p>
         </div>
       </div>
 
-      
+      <div className="mx-auto lg:mx-0">
         <Link href="/signin">
           <ExploreBtnHero />
         </Link>
+      </div>
+        
      
        
     </div>

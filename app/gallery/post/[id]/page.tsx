@@ -36,9 +36,7 @@ interface PageProps{
     const email = session?.user.email
 
     const user = await prisma.user.findUnique({
-
       where: {email: email!}
-
     })
 
 
@@ -81,7 +79,8 @@ interface PageProps{
             investStage: `${data.investStage}`,
             industry: `${data.industry}`,
             pitch: `${data.pitch}`,
-            stage: `${data.stage}`
+            stage: `${data.stage}`,
+            id: `${data.id}`
           }}/>
           
           </>

@@ -1,20 +1,36 @@
+
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { RequestEmail } from '@/lib/emails/InvestorEmail';
+import prisma from '@/lib/prisma';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 
 
-export async function GET() {
+export async function GET(
+  request: Request,
+  { params }: { params: { id: string } }
+) {
 
-    const name = "Mirathi"
-    const image = "https://uawwnkwoyhkmotmoncgk.supabase.co/storage/v1/object/sign/logo/1677856840938.jpeg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJsb2dvLzE2Nzc4NTY4NDA5MzguanBlZyIsImlhdCI6MTY4NjI5MzkyMiwiZXhwIjoxNjg2ODk4NzIyfQ.7fkneI7FE4wK2y5vwZJj3hoUxTl0U2y5lQ7vMjXG_jw&t=2023-06-09T06%3A58%3A42.591Z"
-    const email = "nabkan1998@gmail.com"
+  const id = params.id;
 
-    const session = await getServerSession(authOptions);
+  const post = await prisma.post.findUnique({
+    where: {
+      id
+    },
+  });
+
+  const name = post?.name
+  const image = post?.logo
+
+    
+
+  const session = await getServerSession(authOptions);
+
+  const email = `${session?.user.email}`
     
 
   try {
@@ -35,9 +51,13 @@ export async function GET() {
   }
 
 
-
-
 }
+  
+    
+
+   
+
+   
   
     
 

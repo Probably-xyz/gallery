@@ -5,13 +5,20 @@ import {Main, Sub} from "@/styles/fonts"
 import { UserAuthForm } from "@/components/auth-form"
 import React from "react"
 import { IoIosArrowRoundBack } from "react-icons/io"
-import { useRouter } from "next/navigation"
-import { getServerSession } from "next-auth"
+import { useRouter, redirect } from "next/navigation"
+import { useSession } from "next-auth/react"
 import { authOptions } from "@/lib/auth"
 
 
 export default function SignIn() {
   const router = useRouter()
+
+  const { data: session } = useSession();
+
+  if (session) {
+    redirect("/gallery")
+  }
+
   return (
     <>
       <main className='flex h-screen w-screen overflow-hidden'>
