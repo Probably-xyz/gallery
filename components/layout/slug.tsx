@@ -116,9 +116,9 @@ const Slug: FC <SlugProps> = ({params}) => {
                 <FaLinkedinIn className="lg:text-2xl text-lg md:mr-10 mr-6" />
               </Link>
             </li>
-            <Link href={params.website} target="_blank">
-            <BiLinkExternal className="lg:text-2xl text-lg md:mr-10 mr-6" />
-            </Link>
+            <a href={params.website} target="_blank">
+              <BiLinkExternal className="lg:text-2xl text-lg md:mr-10 mr-6" />
+            </a>
           </ul>
         </div>
 
