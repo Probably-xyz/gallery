@@ -9,6 +9,7 @@ import { MouseEvent, useState } from "react";
 import {Main, Sub} from "@/styles/fonts"
 import Image from 'next/image'
 import { Skeleton } from './shared/skeleton'
+// import { getApproved } from '@/lib/approved-user'
 
 interface PageProps{
   params: {
@@ -45,8 +46,6 @@ const Card: FC<PageProps> = ({ params} ) => {
     mouseY.set(clientY - top);
   };
 
-
-  const { data: session } = useSession()
 
   return (
    
