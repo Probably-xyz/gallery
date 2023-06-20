@@ -30,7 +30,7 @@ export const ExploreBtnHero = () => {
 
 export const FormSubmitBtn = () => {
   return (
-    <button className="gallery-btn flex flex-row">
+    <button className="gallery-btn flex flex-row lg:m-0 mx-auto">
       <div className="flex my-auto shine-anim">
         <span style={Sub.style} className="text-prbly-dark text-base flex my-auto ml-3"> Submit 
           <RxDoubleArrowRight className="flex my-auto text-base text-prbly-dark ml-3"/>

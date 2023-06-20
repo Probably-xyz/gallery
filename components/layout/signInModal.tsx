@@ -29,8 +29,9 @@ const SignInModal = ({
   const router = useRouter()
 
   return (
-    <><Modal showModal={showSignInModal} setShowModal={setShowSignInModal}>
-      <div className="flex lg:flex-row flex-col lg:justify-between justify-center m-auto auth-box-modal ">
+    <>
+    <Modal showModal={showSignInModal} setShowModal={setShowSignInModal}>
+      <div className="flex justify-between m-auto auth-box-modal">
 
 
 
@@ -55,6 +56,22 @@ const SignInModal = ({
 
       </div>
 
+      <div className="auth-box-mobile flex items-center">
+        <div className="flex flex-col m-auto px-4">
+        <div className="flex flex-col">
+          <IoIosArrowRoundBack className="text-4xl text-prbly-dark cursor-pointer relative" onClick={() => router.back()} />
+          <div className="m-auto">
+              <h1 className="text-3xl font-semibold text-center pt-10" style={Main.style}>
+                Enter your email
+              </h1>
+              <p style={Sub.style} className="text-base mt-2 text-prbly-dark text-center">
+                Please log in or sign up to get full access to Probably
+              </p>
+          </div>
+        </div>
+        <UserAuthForm />
+        </div>
+      </div>
 
     </Modal>
     

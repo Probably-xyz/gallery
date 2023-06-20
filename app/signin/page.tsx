@@ -49,12 +49,31 @@ export default function SignIn() {
 
      </div>
 
+    
      
      
 
    <UserAuthForm/>
 
  </div>
+
+ <div className="auth-box-mobile-page flex items-center">
+        <div className="flex flex-col m-auto px-4">
+        <div className="flex flex-col">
+          <IoIosArrowRoundBack className="text-4xl text-prbly-dark cursor-pointer relative" onClick={() => router.back()} />
+          <div className="m-auto">
+              <h1 className="text-3xl font-semibold text-center pt-10" style={Main.style}>
+                Enter your email
+              </h1>
+              <p style={Sub.style} className="text-base mt-2 text-prbly-dark text-center">
+                Please log in or sign up to get full access to Probably
+              </p>
+          </div>
+        </div>
+        <UserAuthForm/>
+        </div>
+      </div>
+
       </main>
     </>
   )

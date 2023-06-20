@@ -225,6 +225,12 @@
     background-image: radial-gradient(at 100% 60%, rgb(229, 229, 229) 0, transparent 100%), radial-gradient(at 100% 100%, rgb(253, 224, 71) 0, transparent 53%), radial-gradient(at 16% 55%, rgb(214, 211, 209) 0, transparent 0%), radial-gradient(at 100% 100%, rgb(107, 33, 168) 0, transparent 100%);
 }
 
+@media screen and (max-width: 780px) {
+    .auth-box{
+        display: none;
+    }
+}
+
   
 
   .slug-box{
@@ -260,19 +266,49 @@
     background-image: radial-gradient(at 100% 60%, rgb(229, 229, 229) 0, transparent 100%), radial-gradient(at 100% 100%, rgb(253, 224, 71) 0, transparent 53%), radial-gradient(at 16% 55%, rgb(214, 211, 209) 0, transparent 0%), radial-gradient(at 100% 100%, rgb(107, 33, 168) 0, transparent 100%);
   }
 
-  @media screen and (max-width: 1440px) {
-    .auth-box-modal{
-        width: 1100px;
-        height: 600px;
-    }
+  .auth-box-mobile{
+    width: 350px;
+    height: 400px;
+    margin: auto;
+    border-radius: 10px;
+    border: 3px solid #333;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    background-color: rgb(255, 255, 255);
+    background-image: radial-gradient(at 100% 60%, rgb(229, 229, 229) 0, transparent 100%), radial-gradient(at 100% 100%, rgb(253, 224, 71) 0, transparent 53%), radial-gradient(at 16% 55%, rgb(214, 211, 209) 0, transparent 0%), radial-gradient(at 100% 100%, rgb(107, 33, 168) 0, transparent 100%);
   }
 
+  .auth-box-mobile-page{
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+    border-radius: 10px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    background-color: rgb(255, 255, 255);
+    background-image: radial-gradient(at 100% 60%, rgb(229, 229, 229) 0, transparent 100%), radial-gradient(at 100% 100%, rgb(253, 224, 71) 0, transparent 53%), radial-gradient(at 16% 55%, rgb(214, 211, 209) 0, transparent 0%), radial-gradient(at 100% 100%, rgb(107, 33, 168) 0, transparent 100%);
+  }
 
-  @media screen and (max-width: 768px){
+  
+    @media screen and (max-width: 768px){
         .auth-box-modal{
-            width: 400px;
+            display:none
         }
-  }
+    }
+
+    @media screen and (min-width: 770px){
+        .auth-box-mobile{
+            display:none
+        }
+        .auth-box-mobile-page{
+            display:none
+        }
+    }
+
+    @media screen and (max-width: 1440px) {
+        .auth-box-modal{
+            width: 1100px;
+            height: 600px;
+        }
+    }
 
 
   .auth-button{
@@ -343,9 +379,16 @@
         }
   }
 
+  @media screen and (max-width: 800px) {
+    .email-form{
+        top: -10px;
+        margin-bottom: 20px;
+       
+    }
+  }
+
   .email-form:focus{
     border: 2px solid #5D31FF;
-
   }
 
 
