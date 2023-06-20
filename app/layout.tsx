@@ -4,6 +4,9 @@ import { NextAuthProvider } from "./providers";
 import React from "react";
 import { MainNav } from "@/components/nav.component";
 import { Toaster } from "@/components/shared/toaster";
+import { Analytics } from '@vercel/analytics/react';
+
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,12 +24,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="favicon.ico" sizes="any"/>
+      </head>
       <body >
         <NextAuthProvider>
           <Toaster />
           {modal}
           {children}
         </NextAuthProvider>
+        <Analytics />
       </body>
     </html>
   );
