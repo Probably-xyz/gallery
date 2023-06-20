@@ -17,7 +17,7 @@ const Hero = () => {
 
   return (
     
-    <div className="max-w-screen-2xl flex lg:flex-row flex-col justify-between lg:px-24 md:px-12 pt-56">
+    <div className="max-w-screen-2xl flex lg:flex-row flex-col justify-between lg:px-24 md:px-12 2xl:pt-56 xl:pt-44 md:pt-40 pt-36">
       <div className="flex flex-col lg:mx-0 mx-auto">
         <div className={Main.className}>
           <h1 className="2xl:text-7xl xl:text-7xl lg:text-5xl md:text-5xl text-3xl hero uppercase leading-tight font-bold lg:text-left text-center">
