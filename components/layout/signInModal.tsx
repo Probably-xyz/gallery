@@ -34,7 +34,7 @@ const SignInModal = ({
 
 
 
-        <div className="flex lg:flex-col flex-row px-24 relative top-32">
+        <div className="flex lg:flex-col flex-row px-24 ">
 
           <IoIosArrowRoundBack className="lg:text-4xl text-6xl text-prbly-dark cursor-pointer relative top-20" onClick={() => router.back()} />
 
