@@ -40,7 +40,7 @@ const SignInModal = ({
 
 
           <div className="my-auto">
-              <h1 className="2xl:text-6xl xl:text-5xl lg:text-4xl font-semibold" style={Main.style}>
+              <h1 className="2xl:text-6xl xl:text-4xl lg:text-4xl font-semibold" style={Main.style}>
                 Enter your email
               </h1>
               <p style={Sub.style} className="xl:text-base lg:text-xs text-prbly-dark mt-5 ">
