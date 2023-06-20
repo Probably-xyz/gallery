@@ -40,7 +40,6 @@ export async function GET(
       subject: `Information request for ${name}`,
       react: RequestEmail({
         image,
-        email,
         name
       })
     });
