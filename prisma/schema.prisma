@@ -41,7 +41,7 @@ model Session {
 model User {
   id            String    @id @default(cuid())
   name          String?
-  email         String?   @unique
+  email         String   @unique
   emailVerified DateTime?
   image         String?
   approved      Boolean  @default(false)
@@ -54,6 +54,13 @@ model Post {
     name String
     description  String
     pitch        String
+    tagline      String
+    industry     String
+    stage        String
+    investStage  String
+    logo         String
+    linkedin     String
+    website      String
 }
 
 

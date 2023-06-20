@@ -1,49 +1,66 @@
-
-
+import { GalleryNav, MainFooter } from '@/components/nav.component';
 import React from 'react'
-import { authOptions } from "../lib/auth";
-import { redirect } from "next/navigation";
-import { getServerSession } from "next-auth";
-import {SignOutBtn} from '../components/button.component';
-import prisma from '../lib/prisma';
-import { useSession } from "next-auth/react";
-import Card from '../components/card.component';
-import { getPosts } from '../lib/getPosts';
-
+import {SignOutBtn} from '@/components/button.component';
+import { getServerSession } from 'next-auth';
+import { authOptions } from '@/lib/auth';
+import Card from '@/components/card.component';
+import { getPosts } from '@/lib/getPosts';
+import {Main, Sub} from "@/styles/fonts"
+import { redirect } from 'next/navigation';
 
 
 
 
 export default async function Gallery()  {
-    // const session = await getServerSession(authOptions);
 
-    
+  const session = await getServerSession(authOptions);
 
-
-    // if (!session) {
-    //   redirect("/api/auth/signin");
-    // }
-
-    // const user = await prisma.user.findUnique({
-    //   where: {email: session?.user?.email}
-    // })
-
+   if (!session) {
+    redirect("/");
+  }
 
   const { posts } = await getPosts()
 
   return (
-    <div>
-        <SignOutBtn />
-        <div>
+  
+    
+   <>
+    <main className="fixed z-30 overflow-hidden">
+        <GalleryNav/>
+
+        <div className="flex items-center w-screen">
+            <div className="flex flex-col mx-auto">
+              <h1 className="flex mx-auto pt-24 pb-8 leading-tight lg:text-4xl md:text-2xl text-xl relative lg:right-0 md:right-20 right-[250px] gallery-title-text uppercase text-prbly-dark text-center font-bold" style={Main.style}> 
+              Browse through our gallery of <br/> groundbreaking projects
+              </h1>
+              <div className="divider  flex mx-auto"> </div>
+            </div>
+        </div>
+    </main>    
+   
+    <div className="overflow-y-scroll  overflow-x-hidden grid-gallery">
+    <div className="flex flex-col w-screen mx-auto items-center pt-14">
         { posts?.map((post) =>(
+
+
          <Card key={post.id} params={{
           name: post.name,
-          description: post.description,
+          logo: post.logo,
           id: post.id,
+          tagline: post.tagline,
+          stage: post.stage,
+          investStage: post.investStage,
+          industry: post.industry,
         }}/>
-        ))}
 
-       </div>
+
+        ))}
+        </div>
     </div>
+      
+     </> 
+    
+    
+   
   )
 }
