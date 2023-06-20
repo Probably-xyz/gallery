@@ -30,7 +30,7 @@ export default async function Gallery()  {
 
         <div className="flex items-center w-screen">
             <div className="flex flex-col mx-auto">
-              <h1 className="flex mx-auto pt-24 pb-8 leading-tight text-4xl uppercase text-prbly-dark text-center font-bold" style={Main.style}> 
+              <h1 className="flex mx-auto pt-24 pb-8 leading-tight lg:text-4xl md:text-2xl text-xl relative lg:right-0 md:right-20 right-[250px] gallery-title-text uppercase text-prbly-dark text-center font-bold" style={Main.style}> 
               Browse through our gallery of <br/> groundbreaking projects
               </h1>
               <div className="divider  flex mx-auto"> </div>

@@ -73,9 +73,52 @@ const Slug: FC <SlugProps> = ({params}) => {
                 <FaLinkedinIn className="text-2xl mr-10" />
               </Link>
             </li>
-            {/* <Link href={data.website} target="_blank"> */}
+            <Link href={params.website} target="_blank">
             <BiLinkExternal className="text-2xl mr-10" />
-            {/* </Link> */}
+            </Link>
+          </ul>
+        </div>
+
+        <div className="flex flex-row px-4 pt-6">
+          <div className="industry-card-2 flex"> <span className="text-sm text-prbly-dark flex m-auto items-center" style={Sub.style}> {params.industry} </span> </div>
+          <div className="industry-card-2 flex"> <span className="text-sm text-prbly-dark flex m-auto items-center" style={Sub.style}> {params.stage} </span> </div>
+          <div className="industry-card-2 flex"> <span className="text-sm text-prbly-dark flex m-auto items-center" style={Sub.style}> {params.investStage} </span> </div>
+        </div>
+
+        <div className="pitch-preview mt-10">
+
+          <div className="pitch-deck">
+            <iframe className="w-full h-full" src={params.pitch} />
+          </div>
+
+        </div>
+
+
+        <button className="gallery-btn flex flex-row mx-auto mt-6" onClick={sendEmail}>
+          <div className="flex my-auto shine-anim">
+            <span style={Sub.style} className="text-prbly-dark text-base flex my-auto ml-3"> Request more information
+              <RxDoubleArrowRight className="flex my-auto text-base text-prbly-dark ml-3" />
+            </span>
+          </div>
+        </button>
+
+      </div>
+
+      <div className="flex flex-col slug-box-mobile items-center m-auto">
+        <div className="flex flex-row justify-between w-full px-10">
+          <Link href="/gallery">
+            <IoIosArrowRoundBack className="text-4xl text-prbly-dark mt-14 cursor-pointer" />
+          </Link>
+          <h1 className="lg:text-6xl font-semibold text-prbly-dark mt-14 lg:ml-20 text-3xl md:ml-20 ml-16" style={Main.style}> {params.name} </h1>
+          <ul className="flex flex-row lg:mt-14 lg:ml-0 mt-16 ml-12">
+            <li>
+              <Link href={params.linkedin} target="_blank">
+                <FaLinkedinIn className="lg:text-2xl text-lg md:mr-10 mr-6" />
+              </Link>
+            </li>
+            <Link href={params.website} target="_blank">
+            <BiLinkExternal className="lg:text-2xl text-lg md:mr-10 mr-6" />
+            </Link>
           </ul>
         </div>
 

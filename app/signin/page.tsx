@@ -8,6 +8,7 @@ import { IoIosArrowRoundBack } from "react-icons/io"
 import { useRouter, redirect } from "next/navigation"
 import { useSession } from "next-auth/react"
 import { authOptions } from "@/lib/auth"
+import useWindowSize from "@/lib/hooks/use-window-size";
 
 
 export default function SignIn() {
@@ -19,9 +20,14 @@ export default function SignIn() {
     redirect("/gallery")
   }
 
+  const { isMobile, isDesktop } = useWindowSize();
+
+
   return (
     <>
       <main className='flex h-screen w-screen overflow-hidden'>
+
+      {isDesktop && (
       <div className="flex justify-between m-auto auth-box">
        
      
@@ -56,7 +62,9 @@ export default function SignIn() {
    <UserAuthForm/>
 
  </div>
-
+      )}
+      
+{isMobile && (
  <div className="auth-box-mobile-page flex items-center">
         <div className="flex flex-col m-auto px-4">
         <div className="flex flex-col">
@@ -73,6 +81,8 @@ export default function SignIn() {
         <UserAuthForm/>
         </div>
       </div>
+
+)}
 
       </main>
     </>

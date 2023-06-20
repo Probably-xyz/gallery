@@ -20,10 +20,11 @@ export const MainNav = () => {
 
           <li className="content__item">
             <a
-              href="#"
+              href="https://airtable.com/shrq8Jf1PrtCLyPeD"
               style={Sub.style}
               className="link link--elara text-base text-prbly-black font-light mt-10"
               data-text="Contact Us"
+              target="_blank"
             >
               <span> Contact Us</span>
             </a>
@@ -48,11 +49,11 @@ export const GalleryNav = () => {
         </Link>
 
         <ul className="flex flex-row">
-          <li className="content__item mr-10">
+          <li className="content__item md:mr-10 mr-4 ml-4">
             <button
               onClick={() => signOut()}
               style={Sub.style}
-              className="link link--elara text-base text-prbly-black font-light mt-10"
+              className="link link--elara md:text-base text-xs text-prbly-black font-light mt-12"
               data-text="Contact Us"
             >
               <span> Signout</span>
@@ -61,10 +62,11 @@ export const GalleryNav = () => {
 
           <li className="content__item">
             <a
-              href="#"
+              href="https://airtable.com/shrq8Jf1PrtCLyPeD"
               style={Sub.style}
-              className="link link--elara text-base text-prbly-black font-light mt-10"
+              className="link link--elara md:text-base text-xs text-prbly-black font-light mt-12"
               data-text="Contact Us"
+              target="_blank"
             >
               <span> Contact Us</span>
             </a>
@@ -89,18 +91,20 @@ export const MainFooter = () => {
         >
           <li className="content__item">
             <a
-              href="#"
+              href="https://www.linkedin.com/company/prbly/"
               style={Sub.style}
               className="link link--elara text-base text-prbly-black font-light"
+              target="_blank"
             >
               <span> Linkedin </span>
             </a>
           </li>
           <li className="content__item">
             <a
-              href="#"
+              href="https://twitter.com/probablyxyz"
               style={Sub.style}
               className="link link--elara text-base text-prbly-black font-light"
+              target='_blank'
             >
               <span> Twitter </span>
             </a>

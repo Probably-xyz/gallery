@@ -15,6 +15,8 @@ import { UserAuthForm } from "../auth-form";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { useRouter } from "next/navigation";
 import { redirect } from "next/navigation";
+import useWindowSize from "@/lib/hooks/use-window-size";
+
 
 const ApprovedModal = ({
   showApprovedModal,
@@ -27,6 +29,7 @@ const ApprovedModal = ({
   const [signInClicked, setSignInClicked] = useState(false);
 
   const router = useRouter()
+  const { isMobile, isDesktop } = useWindowSize();
 
   return (
     <Modal showModal={showApprovedModal} setShowModal={setShowApprovedModal}>
