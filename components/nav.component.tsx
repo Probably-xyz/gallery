@@ -77,48 +77,11 @@ export const GalleryNav = () => {
 
 export const MainFooter = () => {
   return (
-    <footer className="flex items-center w-screen mx-auto relative top-24 border-t border-prbly-dark shadow-inner">
+    <footer className="flex items-center w-screen mx-auto absolute bottom-10 border-t border-prbly-dark shadow-inner ">
       <div className="flex md:flex-row flex-col justify-between mx-auto w-screen md:px-24 pt-10 px-14">
         <h1 style={Sub.style} className="text-base text-prbly-gray font-light ">
           Copyright © 2023 Probably
         </h1>
-
-        {/* <div className="switch-text">
-          <span
-            style={Sub.style}
-            className="text-base text-prbly-black font-light text-1"
-          >
-            Entrepreneurs are 50% more likely to have mental health conditions
-          </span>
-
-          <span
-            style={Sub.style}
-            className="text-base text-prbly-black font-light text-1"
-          >
-            Entrepreneurs are 50% more likely to have mental health conditions
-          </span>
-
-          <span
-            style={Sub.style}
-            className="text-base text-prbly-black font-light text-1"
-          >
-            Entrepreneurs are 50% more likely to have mental health conditions
-          </span>
-
-          <span
-            style={Sub.style}
-            className="text-base text-prbly-black font-light text-1"
-          >
-            Entrepreneurs are 50% more likely to have mental health conditions
-          </span>
-
-          <span
-            style={Sub.style}
-            className="text-base text-prbly-black font-light text-1"
-          >
-            Entrepreneurs are 50% more likely to have mental health conditions
-          </span>
-        </div> */}
 
         <ul
           style={Sub.style}

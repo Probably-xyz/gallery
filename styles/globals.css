@@ -263,9 +263,10 @@
   @media screen and (max-width: 1300px) {
     .auth-box-modal{
         width: 900px;
-        height: 700px;
+        height: 600px;
     }
   }
+
 
   @media screen and (max-width: 768px){
         .auth-box-modal{
