@@ -51,12 +51,12 @@ interface PageProps{
 
     const id = params.id
 
-    let link = `/api/post/` + id
+    let link = `https://www.prbly.xyz/api/post/` + id
     
 
 
     async function getData(link: any) {
-      const res = await fetch(link, {next: {revalidate: 80}})
+      const res = await fetch(link, {next: {revalidate: 3}})
 
       if (!res.ok){
           return notFound()
