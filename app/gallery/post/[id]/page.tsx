@@ -31,13 +31,13 @@ interface PageProps{
   
 
    export default async function SlugPage({params}: PageProps) {
-    const session = await getServerSession(authOptions)
+    // const session = await getServerSession(authOptions)
 
-    const email = session?.user.email
+    // const email = session?.user.email
 
-    const user = await prisma.user.findUnique({
-      where: {email: email!}
-    })
+    // const user = await prisma.user.findUnique({
+    //   where: {email: email!}
+    // })
 
 
 

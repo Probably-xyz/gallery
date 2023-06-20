@@ -41,7 +41,7 @@ const Slug: FC <SlugProps> = ({params}) => {
     console.log(id)
 
 
-    let link = `http://localhost:3000/api/email/` + id
+    let link = `https://www.prbly.xyz/api/email/` + id
 
     await fetch(link, {
       method: "GET"
