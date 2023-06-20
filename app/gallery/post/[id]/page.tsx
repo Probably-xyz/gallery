@@ -42,11 +42,11 @@ interface PageProps{
 
 
 
-    if (!user?.approved) {
+    // if (!user?.approved) {
 
-      redirect("/unAuth")
+    //   redirect("/unAuth")
 
-    }
+    // }
 
 
     const id = params.id
