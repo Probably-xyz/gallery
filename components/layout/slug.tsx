@@ -21,6 +21,7 @@ interface SlugProps {
         pitch: string,
         stage: string,
         id: string,
+        tagline: string,
     }
 }
 
@@ -43,7 +44,7 @@ const Slug: FC <SlugProps> = ({params}) => {
 
     // let link = `https://www.prbly.xyz/api/email/` + id
 
-    await fetch(`https://gallery-probably.vercel.app//api/email/${params.id}`, {
+    await fetch(`https://prbly.xyz/api/email/${params.id}`, {
       method: "GET"
     })
 
@@ -60,7 +61,7 @@ const Slug: FC <SlugProps> = ({params}) => {
   return (
     <>
     <Toaster />
-    <div className="flex w-screen h-screen overflow-hidden">
+    <div className="flex w-screen h-screen">
       <div className="flex flex-col slug-box items-center m-auto">
         <div className="flex flex-row justify-between w-full px-10">
           <Link href="/gallery">
@@ -107,10 +108,18 @@ const Slug: FC <SlugProps> = ({params}) => {
       <div className="flex flex-col slug-box-mobile items-center m-auto">
         <div className="flex flex-row justify-between w-full px-10">
           <Link href="/gallery">
-            <IoIosArrowRoundBack className="text-4xl text-prbly-dark mt-14 cursor-pointer" />
+            <IoIosArrowRoundBack className="text-4xl text-prbly-dark mt-8 cursor-pointer" />
           </Link>
-          <h1 className="lg:text-6xl font-semibold text-prbly-dark mt-14 lg:ml-20 text-3xl md:ml-20 ml-16" style={Main.style}> {params.name} </h1>
-          <ul className="flex flex-row lg:mt-14 lg:ml-0 mt-16 ml-12">
+          
+            <h1 className="lg:text-6xl font-semibold text-prbly-dark mt-8 lg:ml-20 text-3xl md:ml-20 ml-16" style={Main.style}> 
+            {params.name} test test 
+            </h1>
+        
+          <p className="lg:text-sm font-semibold text-prbly-dark mt-2 lg:ml-20 text-xs md:ml-20 ml-16" style={Main.style}> 
+          TEST TEST 
+          </p>
+
+          <ul className="flex flex-row lg:mt-14 lg:ml-0 mt-10 ml-12">
             <li>
               <Link href={params.linkedin} target="_blank">
                 <FaLinkedinIn className="lg:text-2xl text-lg md:mr-10 mr-6" />

@@ -72,7 +72,11 @@ const Card: FC<PageProps> = ({ params} ) => {
              
                 <div className="flex flex-col">
                   <h1 className="ml-4 text-2xl text-prbly-dark font-bold" style={Main.style}> {params.name} </h1>
-                  <p className="ml-4 md:w-full w-60"> {params.tagline} </p>
+
+                  <div className="md:w-[350px] w-60 overflow-hidden whitespace-nowrap text-ellipsis">
+                    <p className="ml-4 "> {params.tagline} </p> 
+                  </div>
+                  
                   <div className="flex flex-row px-4 pt-6">
                     <div className="industry-card flex"> <span className="text-xs text-prbly-dark flex m-auto items-center" style={Sub.style}> {params.industry} </span> </div>
                     <div className="industry-card flex"> <span className="text-xs text-prbly-dark flex m-auto items-center" style={Sub.style}> {params.stage} </span> </div>

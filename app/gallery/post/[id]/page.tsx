@@ -25,6 +25,7 @@ interface PageProps{
       linkedin: string,
       website: string,
       email: any,
+      tagline: string,
     }
   }
 
@@ -54,7 +55,7 @@ interface PageProps{
 
 
     async function getData() {
-      const res = await fetch(`https://gallery-probably.vercel.app//api/post/${params.id}`, {next: {revalidate: 10}})
+      const res = await fetch(`https://prbly.xyz/api/post/${params.id}`, {next: {revalidate: 10}})
 
       if (!res.ok){
           return notFound()
@@ -78,7 +79,8 @@ interface PageProps{
             industry: `${data.industry}`,
             pitch: `${data.pitch}`,
             stage: `${data.stage}`,
-            id: `${data.id}`
+            id: `${data.id}`,
+            tagline: `${data.tagline}`,
           }}/>
           
           </>

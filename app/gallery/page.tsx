@@ -38,20 +38,20 @@ export default async function Gallery()  {
         </div>
     </main>    
    
-    <div className="overflow-y-scroll  overflow-x-hidden grid-gallery">
-    <div className="flex flex-col w-screen mx-auto items-center pt-14">
+    <div className="overflow-y-scroll overflow-x-hidden grid-gallery">
+    <div className="flex flex-col w-screen mx-auto items-center">
         { posts?.map((post) =>(
 
 
-         <Card key={post.id} params={{
-          name: post.name,
-          logo: post.logo,
-          id: post.id,
-          tagline: post.tagline,
-          stage: post.stage,
-          investStage: post.investStage,
-          industry: post.industry,
-        }}/>
+        <Card key={post.id} params={{
+            name: post.name,
+            logo: post.logo,
+            id: post.id,
+            tagline: post.tagline,
+            stage: post.stage,
+            investStage: post.investStage,
+            industry: post.industry,
+          }} />
 
 
         ))}

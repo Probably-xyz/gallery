@@ -161,9 +161,9 @@
 
 
 .grid-gallery{
-    height: 550px;
+    height: 440px;
     position: relative;
-    top: 290px;
+    top: 350px;
 }
   
 
@@ -249,13 +249,12 @@
   
 
   .slug-box{
-    width: 1420px;
-    height: 820px;
+    width: 95%;
+    height: 95%;
     border-radius: 10px;
     border: 3px solid #333;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     background-color: #E6E6E6;
-  
   }
 
   .slug-box-mobile{
@@ -462,6 +461,29 @@
 }
 
 @media screen and (max-width: 780px) {
+    .pitch-con {
+        width: 900px;
+        height: 450px;
+    }
+    
+    .pitch-preview{
+        width: 85%;
+        border-radius: 10px;
+        height: 400px;
+        background-color: #5D31FF; 
+    }
+    
+    .pitch-deck{
+        max-width: 90%;
+        height: 350px;
+        border-radius: 50px;
+        position: relative;
+        top: 25px;
+        left: 5%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
     .pitch-con {
         width: 900px;
         height: 450px;
