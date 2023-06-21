@@ -284,6 +284,7 @@
 }
 
 
+
   .auth-box-2{
     width: 1300px;
     height: 780px;
@@ -460,30 +461,32 @@
     left: 25px;
 }
 
-@media screen and (max-width: 780px) {
+
+
+@media screen and (max-width: 1450px) {
     .pitch-con {
         width: 900px;
-        height: 450px;
+        height: 550px;
     }
     
     .pitch-preview{
-        width: 85%;
+        width: 800px;
         border-radius: 10px;
         height: 400px;
         background-color: #5D31FF; 
     }
     
     .pitch-deck{
-        max-width: 90%;
+        max-width: 95%;
         height: 350px;
         border-radius: 50px;
         position: relative;
         top: 25px;
-        left: 5%;
+        left: 3%;
     }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 780px) {
     .pitch-con {
         width: 900px;
         height: 450px;

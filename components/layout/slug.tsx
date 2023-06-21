@@ -37,16 +37,14 @@ const Slug: FC <SlugProps> = ({params}) => {
 
     const toastLoad = toast.loading("We're sending that email")
 
-    // const id = params.id
+    const id = params.id
 
-    // console.log(id)
+    console.log(id)
 
 
-    // let link = `https://www.prbly.xyz/api/email/` + id
+    let link = `https://www.prbly.xyz/api/email/` + id
 
-    await fetch(`https://prbly.xyz/api/email/${params.id}`, {
-      method: "GET"
-    })
+    await fetch(link)
 
 
     toast.remove(toastLoad)
@@ -112,12 +110,9 @@ const Slug: FC <SlugProps> = ({params}) => {
           </Link>
           
             <h1 className="lg:text-6xl font-semibold text-prbly-dark mt-8 lg:ml-20 text-3xl md:ml-20 ml-16" style={Main.style}> 
-            {params.name} test test 
+            {params.name}
             </h1>
         
-          <p className="lg:text-sm font-semibold text-prbly-dark mt-2 lg:ml-20 text-xs md:ml-20 ml-16" style={Main.style}> 
-          TEST TEST 
-          </p>
 
           <ul className="flex flex-row lg:mt-14 lg:ml-0 mt-10 ml-12">
             <li>
@@ -146,7 +141,7 @@ const Slug: FC <SlugProps> = ({params}) => {
         </div>
 
 
-        <button className="gallery-btn flex flex-row mx-auto mt-6" onClick={sendEmail}>
+        <button className="gallery-btn flex flex-row mx-auto mt-4" onClick={sendEmail}>
           <div className="flex my-auto shine-anim">
             <span style={Sub.style} className="text-prbly-dark text-base flex my-auto ml-3"> Request more information
               <RxDoubleArrowRight className="flex my-auto text-base text-prbly-dark ml-3" />
