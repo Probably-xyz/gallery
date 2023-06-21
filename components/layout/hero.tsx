@@ -30,9 +30,18 @@ const Hero = () => {
       </div>
 
       <div className="mx-auto lg:mx-0">
+       {!session && (
         <Link href="/signin">
           <ExploreBtnHero />
         </Link>
+        )} 
+
+      {session && (
+        <Link href="/gallery">
+          <ExploreBtnHero />
+        </Link>
+      )} 
+         
       </div>
         
      

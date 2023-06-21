@@ -49,7 +49,7 @@ const Card: FC<PageProps> = ({ params} ) => {
 
   return (
    
-    <Link href={`/gallery/post/` + params.id}>
+    <Link href={`/gallery/post/${params.id}`}>
     <div
         className="group cursor-pointer flex flex-col card relative  shadow-2xl"
         onMouseMove={handleMouseMove}

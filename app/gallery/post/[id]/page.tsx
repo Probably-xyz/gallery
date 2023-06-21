@@ -43,20 +43,18 @@ interface PageProps{
 
 
     if (!user?.approved) {
-
       redirect("/unAuth")
-
     }
 
 
     const id = params.id
 
-    let link = `https://www.prbly.xyz/api/post/` + id
+    // let link = `/api/post/${params.id}`
     
 
 
-    async function getData(link: any) {
-      const res = await fetch(link, {next: {revalidate: 3}})
+    async function getData() {
+      const res = await fetch(`https://gallery-probably.vercel.app//api/post/${params.id}`, {next: {revalidate: 10}})
 
       if (!res.ok){
           return notFound()
@@ -65,7 +63,7 @@ interface PageProps{
       return res.json()
   }
 
-      const data = await getData(link)
+      const data = await getData()
 
 
       return (

@@ -36,14 +36,14 @@ const Slug: FC <SlugProps> = ({params}) => {
 
     const toastLoad = toast.loading("We're sending that email")
 
-    const id = params.id
+    // const id = params.id
 
-    console.log(id)
+    // console.log(id)
 
 
-    let link = `https://www.prbly.xyz/api/email/` + id
+    // let link = `https://www.prbly.xyz/api/email/` + id
 
-    await fetch(link, {
+    await fetch(`https://gallery-probably.vercel.app//api/email/${params.id}`, {
       method: "GET"
     })
 

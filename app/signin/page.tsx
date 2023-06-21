@@ -16,9 +16,9 @@ export default function SignIn() {
 
   const { data: session } = useSession();
 
-  if (session) {
-    redirect("/gallery")
-  }
+  // if (session) {
+  //   redirect("/gallery")
+  // }
 
   const { isMobile, isDesktop } = useWindowSize();
 
