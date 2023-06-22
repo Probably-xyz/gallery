@@ -32,6 +32,7 @@ export const metadata = {
     title: "Probably",
     description:
       "Submit your startup and showcase it to a group of investors, it’s that easy.",
+      url: "https://www.prbly.xyz",
     images: [
       "https://uawwnkwoyhkmotmoncgk.supabase.co/storage/v1/object/public/logo/ddfdf.png",
     ],
