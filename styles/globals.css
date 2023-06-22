@@ -486,7 +486,7 @@
     }
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 800px) {
     .pitch-con {
         width: 900px;
         height: 450px;
@@ -500,7 +500,30 @@
     }
     
     .pitch-deck{
-        max-width: 90%;
+        max-width: 580px;
+        height: 350px;
+        border-radius: 50px;
+        position: relative;
+        top: 25px;
+        left: 5%;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .pitch-con {
+        width: 900px;
+        height: 450px;
+    }
+    
+    .pitch-preview{
+        width: 85%;
+        border-radius: 10px;
+        height: 400px;
+        background-color: #5D31FF; 
+    }
+    
+    .pitch-deck{
+        max-width: 330px;
         height: 350px;
         border-radius: 50px;
         position: relative;
