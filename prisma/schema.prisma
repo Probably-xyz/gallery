@@ -61,6 +61,7 @@ model Post {
     logo         String
     linkedin     String
     website      String
+    pitchMobile  String?
 }
 
 
