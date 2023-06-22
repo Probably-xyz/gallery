@@ -135,7 +135,7 @@ const Slug: FC <SlugProps> = ({params}) => {
         <div className="pitch-preview mt-10">
 
           <div className="pitch-deck">
-            <iframe className="w-full h-full" src={params.pitch} />
+            <iframe className="w-auto h-auto" src={params.pitch} />
           </div>
 
         </div>

@@ -1,5 +1,4 @@
 "use client"
-
 import Link from "next/link"
 import {Main, Sub} from "@/styles/fonts"
 import { UserAuthForm } from "@/components/auth-form"
