@@ -36,6 +36,13 @@ interface PageProps{
 
     const email = session?.user.email
 
+    if (!session) {
+      redirect("/signin")
+    }
+
+
+
+
     const user = await prisma.user.findUnique({
       where: {email: email!}
     })

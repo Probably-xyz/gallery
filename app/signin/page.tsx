@@ -34,7 +34,7 @@ export default function SignIn() {
 
        <div className="flex flex-col px-24">
 
-       <IoIosArrowRoundBack className="text-4xl text-prbly-dark cursor-pointer relative top-20" onClick={() => router.back()}/>
+       <IoIosArrowRoundBack className="text-4xl text-prbly-dark cursor-pointer relative top-20" onClick={() => router.push("/")}/>
 
 
        <div className="my-auto">
