@@ -22,6 +22,7 @@ interface SlugProps {
         stage: string,
         id: string,
         tagline: string,
+        pitchMobile: string,
     }
 }
 
@@ -39,7 +40,6 @@ const Slug: FC <SlugProps> = ({params}) => {
 
     const id = params.id
 
-    console.log(id)
 
 
     let link = `https://www.prbly.xyz/api/email/` + id
@@ -135,7 +135,7 @@ const Slug: FC <SlugProps> = ({params}) => {
         <div className="pitch-preview mt-10">
 
           <div className="pitch-deck">
-            <iframe className="w-full h-full" src={params.pitch} />
+            <iframe className="w-full h-full" src={params.pitchMobile} />
           </div>
 
         </div>

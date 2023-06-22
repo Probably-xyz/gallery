@@ -88,6 +88,7 @@ interface PageProps{
             stage: `${data.stage}`,
             id: `${data.id}`,
             tagline: `${data.tagline}`,
+            pitchMobile: `${data.pitchMobile}`
           }}/>
           
           </>
