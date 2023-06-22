@@ -12,18 +12,18 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Probably",
-  description: "The place to get founded & funded 🔎",
+  description: "Submit your startup and showcase it to a group of investors, it’s that easy.",
   icons: {
     icon: '/5.png',
   },
   openGraph: {
     title: "Probably",
     description:
-      "The place to get founded & funded 🔎",
+      "Submit your startup and showcase it to a group of investors, it’s that easy.",
     url: "https://www.prbly.xyz",
     images: [
       {
-        url: "https://www.prbly.xyz The place to get founded & funded 🔎",
+        url: "https://uawwnkwoyhkmotmoncgk.supabase.co/storage/v1/object/public/logo/ddfdf.png",
       },
     ],
   },
@@ -31,9 +31,9 @@ export const metadata = {
     card: "summary_large_image",
     title: "Probably",
     description:
-      "The place to get founded & funded 🔎",
+      "Submit your startup and showcase it to a group of investors, it’s that easy.",
     images: [
-      "https://www.prbly.xyz The place to get founded & funded 🔎",
+      "https://uawwnkwoyhkmotmoncgk.supabase.co/storage/v1/object/public/logo/ddfdf.png",
     ],
   },
 };
