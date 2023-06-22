@@ -134,10 +134,19 @@ const Slug: FC <SlugProps> = ({params}) => {
 
         <div className="pitch-preview mt-10">
 
-          <div className="pitch-deck">
+          {/* <div className="pitch-deck">
             <iframe className="w-full h-full" src={params.pitchMobile} />
-          </div>
-
+          </div> */}
+          <Link href={params.pitch} target="_blank" className="relative top-36">
+            <button className="gallery-btn flex flex-row mx-auto mt-4 ">
+            <div className="flex my-auto bg-white px-3 py-2 border-2 border-black">
+              <span style={Main.style} className="text-prbly-dark text-lg flex m-auto"> 
+                Download Pitch
+              </span>
+            </div>
+            </button>
+          </Link>
+       
         </div>
 
 
