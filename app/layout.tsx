@@ -16,6 +16,26 @@ export const metadata = {
   icons: {
     icon: '/5.png',
   },
+  openGraph: {
+    title: "Probably",
+    description:
+      "The place to get founded & funded 🔎",
+    url: "https://www.prbly.xyz",
+    images: [
+      {
+        url: "https://www.prbly.xyz The place to get founded & funded 🔎",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Probably",
+    description:
+      "The place to get founded & funded 🔎",
+    images: [
+      "https://www.prbly.xyz The place to get founded & funded 🔎",
+    ],
+  },
 };
 
 export default function RootLayout({
