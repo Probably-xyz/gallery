@@ -36,6 +36,9 @@ export const MainNav = () => {
 };
 
 export const GalleryNav = () => {
+
+  const {data: session} = useSession()
+
   return (
     <nav className="flex items-center w-screen mx-auto">
       <div className="flex flex-row justify-between mx-auto w-screen md:px-28 px-10">
@@ -50,7 +53,8 @@ export const GalleryNav = () => {
 
         <ul className="flex flex-row">
           <li className="content__item md:mr-10 mr-4 ml-4">
-            <button
+            {session && (
+              <button
               onClick={() => signOut()}
               style={Sub.style}
               className="link link--elara md:text-base text-xs text-prbly-black font-light mt-12"
@@ -58,6 +62,8 @@ export const GalleryNav = () => {
             >
               <span> Signout</span>
             </button>
+            )}
+            
           </li>
 
           <li className="content__item">
