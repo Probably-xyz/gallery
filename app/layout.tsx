@@ -23,7 +23,7 @@ export const metadata = {
     url: "https://www.prbly.xyz",
     images: [
       {
-        url: "https://uawwnkwoyhkmotmoncgk.supabase.co/storage/v1/object/public/logo/ddfdf.png",
+        url: "https://uawwnkwoyhkmotmoncgk.supabase.co/storage/v1/object/public/logo/F0GW8gBXwAAfq6t.jpeg",
       },
     ],
   },
@@ -34,7 +34,7 @@ export const metadata = {
       "Submit your startup and showcase it to a group of investors, it’s that easy.",
       url: "https://www.prbly.xyz",
     images: [
-      "https://uawwnkwoyhkmotmoncgk.supabase.co/storage/v1/object/public/logo/ddfdf.png",
+      "https://uawwnkwoyhkmotmoncgk.supabase.co/storage/v1/object/public/logo/F0GW8gBXwAAfq6t.jpeg",
     ],
   },
 };
