@@ -67,8 +67,10 @@ const Card: FC<PageProps> = ({ params} ) => {
           }}
         />
           <div className="flex flex-row px-4 py-6 z-10">
-            
-                <Image className="hidden md:block" src={params.logo} width={100} height={100} alt={params.name}/>
+                <div className="w-32 h-32 hidden md:block my-auto">
+                  <Image className="hidden md:block" src={params.logo} width={100} height={100} alt={params.name}/>
+                </div>
+               
              
                 <div className="flex flex-col">
                   <h1 className="ml-4 text-2xl text-prbly-dark font-bold" style={Main.style}> {params.name} </h1>
