@@ -115,6 +115,14 @@ export const MainFooter = () => {
               <span> Twitter </span>
             </a>
           </li>
+          <li className="content__item">
+            <Link 
+              style={Sub.style}
+              className="link link--elara text-base text-prbly-black font-light" 
+              href="/manifesto">
+              <span> Manifesto </span>
+            </Link>
+          </li>
         </ul>
       </div>
     </footer>
