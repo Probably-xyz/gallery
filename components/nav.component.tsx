@@ -82,7 +82,7 @@ export const MainFooter = () => {
     <footer className="flex items-center w-screen mx-auto absolute bottom-10 border-t border-prbly-dark shadow-inner ">
       <div className="flex md:flex-row flex-col justify-between mx-auto w-screen md:px-24 pt-10 px-14">
         <h1 style={Sub.style} className="text-base text-prbly-gray font-light ">
-          Copyright © 2023 Probably
+          Copyright © 2024 Probably
         </h1>
 
         <ul
@@ -104,9 +104,9 @@ export const MainFooter = () => {
               href="https://twitter.com/probablyxyz"
               style={Sub.style}
               className="link link--elara text-base text-prbly-black font-light"
-              target='_blank'
+              target="_blank"
             >
-              <span> Twitter </span>
+              <span>X</span>
             </a>
           </li>
         </ul>
